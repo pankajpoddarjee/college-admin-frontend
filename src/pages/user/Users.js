@@ -2,7 +2,7 @@ import React,{useState,useEffect} from "react";
 import axios from "axios";
 
 const LIMIT = 8;
-function Colleges(){
+function Users(){
     const [colleges, setColleges] = useState([]);
     const [totalColleges, setTotalColleges] = useState(0);
     const [activePage, setActivePage] = useState(1);
@@ -13,7 +13,7 @@ function Colleges(){
     const fetchData = () => {
         setTimeout(() => {
         }, 3000);
-        axios.get('http://localhost:4000/college', {
+        axios.get('http://localhost:4000/user', {
           params: {
             page: activePage,
             size: LIMIT
@@ -32,7 +32,7 @@ function Colleges(){
           <div class="card">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-6 text-left" ><h5 class="card-title">College List</h5></div>
+                    <div class="col-md-6 text-left" ><h5 class="card-title">User List</h5></div>
                     <div class="col-md-6 text-right" ><h5 class="card-title"><a href="college/add">Add New</a></h5></div>
                 </div>
               
@@ -41,8 +41,8 @@ function Colleges(){
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">College Name</th>
-                    <th scope="col">Address</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Mobile</th>
                     <th scope="col">Email</th>
                   </tr>
                 </thead>
@@ -50,8 +50,8 @@ function Colleges(){
                 {colleges.map((item,index)=>
                   <tr>
                     <th scope="row">{index+1}</th>
-                    <td>{item.college_name}</td>
-                    <td>{item.address}</td>
+                    <td>{item.name}</td>
+                    <td>{item.mobile}</td>
                     <td>{item.email}</td>
                   </tr>
                 )}                 
@@ -65,4 +65,4 @@ function Colleges(){
     );
 }
 
-export default Colleges;
+export default Users;

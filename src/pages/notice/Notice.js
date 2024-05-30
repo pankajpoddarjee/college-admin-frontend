@@ -2,7 +2,7 @@ import React,{useState,useEffect} from "react";
 import axios from "axios";
 
 const LIMIT = 8;
-function Colleges(){
+function Notice(){
     const [colleges, setColleges] = useState([]);
     const [totalColleges, setTotalColleges] = useState(0);
     const [activePage, setActivePage] = useState(1);
@@ -65,4 +65,4 @@ function Colleges(){
     );
 }
 
-export default Colleges;
+export default Notice;

@@ -20,9 +20,9 @@ function Sidebar() {
          </li>
    
          <li>
-           <a href="icons.html">
-             <i class="zmdi zmdi-invert-colors"></i> <span>UI Icons</span>
-           </a>
+            <Link  to="users">
+             <i class="zmdi zmdi-format-list-bulleted"></i> <span>Users</span>
+            </Link>
          </li>
    
          <li>
@@ -32,9 +32,9 @@ function Sidebar() {
          </li>
    
          <li>
-           <a href="tables.html">
-             <i class="zmdi zmdi-grid"></i> <span>Tables</span>
-           </a>
+            <Link  to="colleges-notice">
+             <i class="zmdi zmdi-grid"></i> <span>Colleges Notice</span>
+            </Link>
          </li>
    
          <li>

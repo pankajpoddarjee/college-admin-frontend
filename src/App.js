@@ -7,6 +7,8 @@ import Dashboard from './pages/Dashboard';
 import NoPage from './pages/NoPage';
 import Colleges from './pages/college/Colleges';
 import AddCollege from './pages/college/Add';
+import Notice from './pages/notice/Notice';
+import Users from './pages/user/Users';
 
 function App() {
   return (
@@ -16,8 +18,10 @@ function App() {
       <Route path="signup" element={<SignUp />} />
       <Route path="login" element={<Login />} />
         <Route path="/" element={<Layout />}>
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" index element={<Dashboard />} />
           <Route path="/colleges" element={<Colleges />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/colleges-notice" element={<Notice />} />
           <Route path="/college/add" element={<AddCollege />} />
         </Route>
         <Route path="*" element={<NoPage />} />
