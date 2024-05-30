@@ -36,8 +36,14 @@ function Sidebar() {
              <i class="zmdi zmdi-grid"></i> <span>Colleges Notice</span>
             </Link>
          </li>
-   
+
          <li>
+            <Link  to="course-type">
+             <i class="zmdi zmdi-grid"></i> <span>Course Type</span>
+            </Link>
+         </li>
+   
+         {/* <li>
            <a href="calendar.html">
              <i class="zmdi zmdi-calendar-check"></i> <span>Calendar</span>
              <small class="badge float-right badge-light">New</small>
@@ -65,7 +71,7 @@ function Sidebar() {
          <li class="sidebar-header">LABELS</li>
          <li><a href="javaScript:void();"><i class="zmdi zmdi-coffee text-danger"></i> <span>Important</span></a></li>
          <li><a href="javaScript:void();"><i class="zmdi zmdi-chart-donut text-success"></i> <span>Warning</span></a></li>
-         <li><a href="javaScript:void();"><i class="zmdi zmdi-share text-info"></i> <span>Information</span></a></li>
+         <li><a href="javaScript:void();"><i class="zmdi zmdi-share text-info"></i> <span>Information</span></a></li> */}
    
        </ul>
       

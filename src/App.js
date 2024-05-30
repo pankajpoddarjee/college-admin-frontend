@@ -9,6 +9,7 @@ import Colleges from './pages/college/Colleges';
 import AddCollege from './pages/college/Add';
 import Notice from './pages/notice/Notice';
 import Users from './pages/user/Users';
+import CourseType from './pages/coursetype/CourseType';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/dashboard" index element={<Dashboard />} />
           <Route path="/colleges" element={<Colleges />} />
           <Route path="/users" element={<Users />} />
+          <Route path="/course-type" element={<CourseType />} />
           <Route path="/colleges-notice" element={<Notice />} />
           <Route path="/college/add" element={<AddCollege />} />
         </Route>
