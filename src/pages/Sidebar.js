@@ -42,7 +42,11 @@ function Sidebar() {
              <i class="zmdi zmdi-grid"></i> <span>Course Type</span>
             </Link>
          </li>
-   
+         <li>
+            <Link  to="notice-type">
+             <i class="zmdi zmdi-grid"></i> <span>Notice Type</span>
+            </Link>
+         </li>
          {/* <li>
            <a href="calendar.html">
              <i class="zmdi zmdi-calendar-check"></i> <span>Calendar</span>

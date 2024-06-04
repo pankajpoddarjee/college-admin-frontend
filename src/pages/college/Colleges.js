@@ -48,7 +48,7 @@ function Colleges(){
                 </thead>
                 <tbody>
                 {colleges.map((item,index)=>
-                  <tr>
+                  <tr id={index}>
                     <th scope="row">{index+1}</th>
                     <td>{item.college_name}</td>
                     <td>{item.address}</td>

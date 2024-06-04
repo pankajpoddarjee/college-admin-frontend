@@ -1,17 +1,17 @@
 import React,{useEffect,useState} from 'react'
 import axios from "axios";
-function CourseType() {
-    const [courseType, setCourseType] = useState([]);
+function NoticeTypes() {
+    const [noticeType, setNoticeType] = useState([]);
 
     useEffect(()=>{
-        fetchCourseType();
+        fetchNoticeTypes();
     }, []);
-    const fetchCourseType = async () => {
+    const fetchNoticeTypes = async () => {
         try {
-          const response = await axios.get('http://localhost:4000/course-type');
-          setCourseType(response.data.records);
+          const response = await axios.get('http://localhost:4000/notice-type');
+          setNoticeType(response.data.records);
           console.log(response.data.records);
-          console.log(courseType);
+          console.log(noticeType);
         } catch (error) {
           console.error('Error fetching users:', error);
         }
@@ -22,7 +22,7 @@ function CourseType() {
       <div class="card">
         <div class="card-body">
             <div class="row">
-                <div class="col-md-6 text-left" ><h5 class="card-title">Course Type List</h5></div>
+                <div class="col-md-6 text-left" ><h5 class="card-title">Notice Types List</h5></div>
                 <div class="col-md-6 text-right" ><h5 class="card-title"><a href="college/add">Add New</a></h5></div>
             </div>
           
@@ -31,16 +31,16 @@ function CourseType() {
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Course Type Name</th>
-                <th scope="col">Short Name</th>
+                <th scope="col">Notice Type Name</th>
+                <th scope="col">Asctive Status</th>
               </tr>
             </thead>
             <tbody>
-            {courseType.map((item,index)=>
+            {noticeType.map((item,index)=>
                   <tr>
                     <th scope="row">{index+1}</th>
-                    <td>{item.course_type_name}</td>
-                    <td>{item.short_name}</td>
+                    <td>{item.notice_type_name}</td>
+                    <td>{item.active_status}</td>
                   </tr>
                 )}          
             </tbody>
@@ -53,4 +53,4 @@ function CourseType() {
   )
 }
 
-export default CourseType
+export default NoticeTypes

@@ -3,65 +3,56 @@ import axios from "axios";
 
 const LIMIT = 8;
 function Notice(){
-    const [colleges, setColleges] = useState([]);
-    const [totalColleges, setTotalColleges] = useState(0);
-    const [activePage, setActivePage] = useState(1);
-    useEffect(()=>{
-        fetchData();
-    }, []);
+  const [notice, setNotice] = useState([]);
 
-    const fetchData = () => {
-        setTimeout(() => {
-        }, 3000);
-        axios.get('http://localhost:4000/college', {
-          params: {
-            page: activePage,
-            size: LIMIT
-          }
-        }).then(({data}) => {
-          setActivePage(activePage+ 1);
-          setColleges([...colleges, ...data.records]);
-          setTotalColleges(data.total)
-        }).catch(error => {
-          console.log(error.response);
-        })
+  useEffect(()=>{
+      fetchNotice();
+  }, []);
+  const fetchNotice = async () => {
+      try {
+        const response = await axios.get('http://localhost:4000/college-notice');
+        console.log(response.data.records);
+        setNotice(response.data.records);
+      } catch (error) {
+        console.error('Error fetching users:', error);
       }
+  };
     return (
-        <div class="row mt-3">
-        <div class="col-lg-12">
-          <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-6 text-left" ><h5 class="card-title">Notice List</h5></div>
-                    <div class="col-md-6 text-right" ><h5 class="card-title"><a href="college/add">Add New</a></h5></div>
-                </div>
-              
-			  <div class="table-responsive">
-              <table class="table table-bordered">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">College Name</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Email</th>
-                  </tr>
-                </thead>
-                <tbody>
-                {colleges.map((item,index)=>
-                  <tr>
-                    <th scope="row">{index+1}</th>
-                    <td>{item.college_name}</td>
-                    <td>{item.address}</td>
-                    <td>{item.email}</td>
-                  </tr>
-                )}                 
-                </tbody>
-              </table>
-            </div>
-            </div>
+      <div class="row mt-3">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+              <div class="row">
+                  <div class="col-md-6 text-left" ><h5 class="card-title">Notice List</h5></div>
+                  <div class="col-md-6 text-right" ><h5 class="card-title"><a href="colleges-notice/add">Add New</a></h5></div>
+              </div>
+            
+      <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Notice Title</th>
+                  <th scope="col">Notice Date</th>
+                  <th scope="col">Full URL Link</th>
+                </tr>
+              </thead>
+              <tbody>
+              {notice.map((item,index)=>
+                <tr>
+                  <th scope="row">{index+1}</th>
+                  <td>{item.notice_title}</td>
+                  <td>{item.notice_date}</td>
+                  <td>{item.full_url_link}</td>
+                </tr>
+              )}                 
+              </tbody>
+            </table>
+          </div>
           </div>
         </div>
       </div>
+    </div>
     );
 }
 

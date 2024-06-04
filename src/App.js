@@ -10,6 +10,8 @@ import AddCollege from './pages/college/Add';
 import Notice from './pages/notice/Notice';
 import Users from './pages/user/Users';
 import CourseType from './pages/coursetype/CourseType';
+import AddNotice from './pages/notice/AddNotice';
+import NoticeTypes from './pages/notice/NoticeTypes';
 
 function App() {
   return (
@@ -23,7 +25,9 @@ function App() {
           <Route path="/colleges" element={<Colleges />} />
           <Route path="/users" element={<Users />} />
           <Route path="/course-type" element={<CourseType />} />
+          <Route path="/notice-type" element={<NoticeTypes />} />
           <Route path="/colleges-notice" element={<Notice />} />
+          <Route path="/colleges-notice/add" element={<AddNotice />} />
           <Route path="/college/add" element={<AddCollege />} />
         </Route>
         <Route path="*" element={<NoPage />} />
